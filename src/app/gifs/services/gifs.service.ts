@@ -18,6 +18,11 @@ export class GifsService {
     return [...this._tagsHistory];
   }
 
+  // clearHistory(): void {
+  //   console.log('Limpiar historial');
+  //   this._tagsHistory = [];
+  // }
+
   private organizeHistory(tag: string) {
     tag = tag.toLowerCase();
 
@@ -35,7 +40,7 @@ export class GifsService {
 
     const params = new HttpParams()
       .set('api_key', this.apiKey)
-      .set('limit', '10')
+      .set('limit', '9')
       .set('q', tag);
 
     this.http

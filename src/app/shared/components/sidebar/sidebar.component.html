@@ -15,8 +15,7 @@
     </div>
     <ul class="mt-4 mb-10 border-b pb-4">
       <li>
-        <a
-          href="#"
+        <button
           class="flex items-center gap-4 p-2 hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors rounded-lg"
         >
           <svg
@@ -34,12 +33,11 @@
             />
           </svg>
           <span>Bandeja de entrada</span>
-        </a>
+        </button>
       </li>
       <li>
-        <a
-          href="#"
-          class="flex items-center gap-4 p-2 hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors rounded-lg"
+        <button
+          class="w-full flex items-center gap-4 p-2 hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors rounded-lg"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -56,12 +54,11 @@
             />
           </svg>
           <span>Actividad</span>
-        </a>
+        </button>
       </li>
       <li>
-        <a
-          href="#"
-          class="flex items-center gap-4 p-2 hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors rounded-lg"
+        <button
+          class="w-full flex items-center gap-4 p-2 hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors rounded-lg"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -78,7 +75,7 @@
             />
           </svg>
           <span>Calendario</span>
-        </a>
+        </button>
       </li>
     </ul>
     <h5
@@ -88,10 +85,10 @@
     </h5>
     <ul class="border-b pb-4">
       <li>
-        <a
+        <button
           *ngFor="let tag of tags"
-          href="#"
-          class="flex items-center gap-4 p-2 hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors rounded-lg"
+          (click)="searchTag(tag)"
+          class="w-full flex items-center gap-4 p-2 hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors rounded-lg"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -108,7 +105,7 @@
             />
           </svg>
           <span> {{ tag | titlecase }} </span>
-        </a>
+        </button>
       </li>
     </ul>
     <h5
@@ -118,9 +115,9 @@
     </h5>
     <ul>
       <li>
-        <a
-          href="#"
-          class="flex items-center gap-4 p-2 hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors rounded-lg"
+        <button
+          (click)="searchTag('animes')"
+          class="w-full flex items-center gap-4 p-2 hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors rounded-lg"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -137,12 +134,12 @@
             />
           </svg>
           <span>Animes</span>
-        </a>
+        </button>
       </li>
       <li>
-        <a
-          href="#"
-          class="flex items-center gap-4 p-2 hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors rounded-lg"
+        <button
+          (click)="searchTag('gatos')"
+          class="w-full flex items-center gap-4 p-2 hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors rounded-lg"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -159,12 +156,12 @@
             />
           </svg>
           <span>Gatos</span>
-        </a>
+        </button>
       </li>
       <li>
-        <a
-          href="#"
-          class="flex items-center gap-4 p-2 hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors rounded-lg"
+        <button
+          (click)="searchTag('perritos')"
+          class="w-full flex items-center gap-4 p-2 hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors rounded-lg"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -181,7 +178,7 @@
             />
           </svg>
           <span>Perros</span>
-        </a>
+        </button>
       </li>
     </ul>
   </section>
@@ -190,9 +187,8 @@
     <!-- Settings -->
     <ul class="my-4">
       <li>
-        <a
-          href="#"
-          class="flex items-center gap-4 p-2 font-bold text-gray-500 hover:bg-gray-200 transition-colors rounded-lg"
+        <button
+          class="w-full flex items-center gap-4 p-2 font-bold text-gray-500 hover:bg-gray-200 transition-colors rounded-lg"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -214,12 +210,11 @@
             />
           </svg>
           <span>Ajustes</span>
-        </a>
+        </button>
       </li>
       <li>
-        <a
-          href="#"
-          class="flex items-center gap-4 p-2 font-bold text-gray-500 hover:bg-gray-200 transition-colors rounded-lg"
+        <button
+          class="w-full flex items-center gap-4 p-2 font-bold text-gray-500 hover:bg-gray-200 transition-colors rounded-lg"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -236,7 +231,7 @@
             />
           </svg>
           <span>Ayuda</span>
-        </a>
+        </button>
       </li>
     </ul>
     <!-- Info user -->
