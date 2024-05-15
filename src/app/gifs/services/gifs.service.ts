@@ -12,16 +12,23 @@ export class GifsService {
 
   public gifsList: Gif[] = [];
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) {
+    this.loadLocalStorage();
+    console.log('Gifs Service Ready');
+  }
 
   get tagsHistory(): string[] {
     return [...this._tagsHistory];
   }
 
-  // clearHistory(): void {
-  //   console.log('Limpiar historial');
-  //   this._tagsHistory = [];
-  // }
+  clearHistory(): void {
+    console.log('Limpiar historial');
+    //Limpia el historial de busquedas
+    this._tagsHistory = [];
+    // Limpia los gifs cargados
+    this.gifsList = [];
+    localStorage.removeItem('history');
+  }
 
   private organizeHistory(tag: string) {
     tag = tag.toLowerCase();
@@ -32,6 +39,21 @@ export class GifsService {
 
     this._tagsHistory.unshift(tag);
     this._tagsHistory = this.tagsHistory.splice(0, 10);
+    this.saveLocalStorage();
+  }
+
+  private saveLocalStorage(): void {
+    localStorage.setItem('history', JSON.stringify(this._tagsHistory));
+  }
+
+  private loadLocalStorage(): void {
+    if (!localStorage.getItem('history')) return;
+    this._tagsHistory = JSON.parse(localStorage.getItem('history')!);
+
+    if (localStorage.length === 0) return;
+
+    const lastSearch = this._tagsHistory[0];
+    this.searchTag(lastSearch);
   }
 
   public searchTag(tag: string): void {

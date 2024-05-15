@@ -83,7 +83,7 @@
     >
       Historial
     </h5>
-    <ul class="border-b pb-4">
+    <ul class="border-b pb-2">
       <li>
         <button
           *ngFor="let tag of tags"
@@ -107,6 +107,12 @@
           <span> {{ tag | titlecase }} </span>
         </button>
       </li>
+      <button
+        (click)="clear()"
+        class="w-full flex items-center gap-4 p-2 hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors rounded-lg"
+      >
+        Limpiar Historial
+      </button>
     </ul>
     <h5
       class="uppercase font-semibold text-xs text-indigo-600 tracking-[2px] my-4"
