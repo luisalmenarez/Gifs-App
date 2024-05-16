@@ -69,8 +69,6 @@ export class GifsService {
       .get<SearchResponse>(`${this.serviceUrl}/search`, { params })
       .subscribe((res) => {
         this.gifsList = res.data;
-
-        console.log({ Gifs: this.gifsList });
       });
   }
 }

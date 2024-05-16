@@ -1,10 +1,24 @@
-import { Component } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-lazy-image',
+  selector: 'shared-lazy-image',
   templateUrl: './lazy-image.component.html',
-  styleUrl: './lazy-image.component.css'
 })
-export class LazyImageComponent {
+export class LazyImageComponent implements OnInit {
+  @Input()
+  public imageUrl!: string;
 
+  @Input()
+  public imageAlt: string = '';
+
+  public hasLoaded: boolean = false;
+
+  ngOnInit(): void {
+    if (!this.imageUrl) throw new Error('ImageURL property not found');
+  }
+
+  onLoad(): void {
+    console.log('Images Loaded');
+    this.hasLoaded = true;
+  }
 }
