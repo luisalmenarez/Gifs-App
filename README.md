@@ -29,3 +29,7 @@ Este proyecto es una aplicación web desarrollada con Angular que consume la API
 - Haz clic en un gif para ver más detalles, incluyendo su título, usuario y la opción de compartir.
 
 ## Preview
+
+![gifs_app](https://github.com/luisalmenarez/Gifs-App/assets/125621759/ea69c8b2-f78c-48d1-ac6c-d6e046ba2ad9)
+![gifs-app](https://github.com/luisalmenarez/Gifs-App/assets/125621759/ed9941af-3cbf-441f-b5f0-f28ce6a07b09)
+
